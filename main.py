@@ -35,12 +35,12 @@ def reset_timer():
     canvas.itemconfig(timer_text, text="00:00")
     title_label.config(text="Timer")
     check_marks.config(text="")
-    global reps
+    global reps # 讓reps變全域變數，重新計時。
     reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    global reps
+    global reps # 讓reps變全域變數，重新計算。
     reps += 1
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
@@ -103,5 +103,5 @@ reset_btn.grid(column=2, row=2)  # 設定reset_btn的位置。
 check_marks = Label(fg=GREEN, bg=YELLOW)
 check_marks.grid(column=1, row=3)
 
-window.tk_setPalette(background=YELLOW)
+window.tk_setPalette(background=YELLOW) # 設定所有物件的背景為YELLOW
 window.mainloop()
